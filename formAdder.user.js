@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name formAdder
 // @description Добавляем возможность подстановки пароля в форму логина СБРС мехмата ЮФУ
-// @author ulysses
+// @author ulysses, dummer
 // @license MIT
-// @version 1.0
-// @include http://rating.mmcs.sfedu.ru/
+// @version 1.1
+// @include     http://rating.mmcs.sfedu.ru/
+// @include     https://rating.mmcs.sfedu.ru/
+// @include     http://grade.sfedu.ru/
+// @include     https://grade.sfedu.ru/
 // @grant none
 // ==/UserScript==
 
-inputs=document.getElementById('inputs')
-form=document.createElement('form');
-form.innerHTML=inputs.outerHTML
-inputs.parentNode.replaceChild(form,inputs)
+$('.AuthForm').first().wrapInner('<form></form>');
